@@ -21,7 +21,7 @@ btn1.addEventListener("click", function (){
     }
 });
 
-Telegram.webapp.onEvent("mainButtonClicked", function (){
+Telegram.WebApp.onEvent("mainButtonClicked", function (){
     tg.sendData(item);
 });
 
