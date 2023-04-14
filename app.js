@@ -1,3 +1,4 @@
+console.log(1)
 let tg = window.Telegram.WebApp;
 
 tg.expand();
