@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 	<title>Mobile Menu</title>
 	<style>
 		body {
@@ -62,7 +64,7 @@
 				<img src="1.png" alt="Product 1">
 				<h2>Product 1</h2>
 				<div class="price">$10.99</div>
-				<button class="add">Add</button>
+				<button class="add" id="btn1">Add</button>
 			</td>
 			<td>
 				<img src="1.png" alt="Product 2">
@@ -117,7 +119,15 @@
 			<button class="add">Add</button>
 		</td>
 	</tr>
+
+        <tr>
+            <td>
+                <div class="usercard" id="usercard"></div>
+            </td>
+        </tr>
 </table>
+
+<script src="app.js"></script>
 </body>
 </html>
 
