@@ -1,136 +1,229 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Coffee Bar Menu</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-<head>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<title>Mobile Menu</title>
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-		}
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			margin-top: 20px;
-		}
-		td {
-			width: 33.33%;
-			padding: 10px;
-			border: 1px solid #ccc;
-			text-align: center;
-			background-color: #fff;
-			vertical-align: middle;
-		}
-		img {
-			max-width: 100%;
-			height: auto;
-			display: block;
-			margin: 0 auto;
-		}
-		h2 {
-			margin: 10px 0;
-			font-size: 1.2em;
-			font-weight: bold;
-			color: #333;
-		}
-		.price {
-			margin: 10px 0;
-			font-size: 1em;
-			color: #999;
-		}
-		.add {
-			display: block;
-			margin: 10px auto;
-			padding: 10px 20px;
-			background-color: #333;
-			color: #fff;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-		.add:hover {
-			background-color: #444;
-		}
-	</style>
-</head>
-<body>
-	<table>
-		<tr>
-			<td>
-				<img src="1.png" alt="Product 1">
-				<h2>Product 1</h2>
-				<div class="price">$10.99</div>
-				<button class="add" id="btn1">Add</button>
-			</td>
-			<td>
-				<img src="1.png" alt="Product 2">
-				<h2>Product 2</h2>
-				<div class="price">$15.99</div>
-				<button class="add">Add</button>
-			</td>
-			<td>
-				<img src="1.png" alt="Product 3">
-				<h2>Product 3</h2>
-				<div class="price">$20.99</div>
-				<button class="add">Add</button>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<img src="1.png" alt="Product 4">
-				<h2>Product 4</h2>
-				<div class="price">$12.99</div>
-				<button class="add">Add</button>
-			</td>
-			<td>
-				<img src="1.png" alt="Product 5">
-				<h2>Product 5</h2>
-				<div class="price">$18.99</div>
-				<button class="add">Add</button>
-			</td>
-			<td>
-				<img src="1.png" alt="Product 6">
-				<h2>Product 6</h2>
-				<div class="price">$24.99</div>
-				<button class="add">Add</button>
-			</td>
-		</tr>
-		<tr>
-		<td>
-			<img src="1.png" alt="Product 7">
-			<h2>Product 7</h2>
-			<div class="price">$8.99</div>
-			<button class="add">Add</button>
-		</td>
-		<td>
-			<img src="1.png" alt="Product 8">
-			<h2>Product 8</h2>
-			<div class="price">$14.99</div>
-			<button class="add">Add</button>
-		</td>
-		<td>
-			<img src="1.png" alt="Product 9">
-			<h2>Product 9</h2>
-			<div class="price">$22.99</div>
-			<button class="add">Add</button>
-		</td>
-	</tr>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
 
-        <tr>
-            <td>
-                <div class="usercard" id="usercard"></div>
-            </td>
-        </tr>
-</table>
+      .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px;
+      }
 
-<script src="app.js"></script>
-</body>
-</html>
+      .menu-category {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
 
+      .menu-category h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
 
+      .menu-category ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
 
+      .menu-category li {
+        margin-bottom: 5px;
+      }
 
+      .menu-category li a {
+        display: block;
+        background-color: #eee;
+        color: #333;
+        padding: 10px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+
+      .menu-category li a:hover {
+        background-color: #ccc;
+      }
+
+      .menu-items {
+        flex: 0 0 75%;
+        max-width: 75%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .menu-item {
+        flex: 0 0 32%;
+        max-width: 32%;
+        margin-bottom: 20px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .menu-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .menu-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        margin-bottom: 10px;
+      }
+
+      .menu-item h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .menu-item p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .menu-item button {
+        display: block;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .menu-item button:hover {
+        background-color: #444;
+      }
+
+      /* Hide all items by default */
+      .menu-items .menu-item {
+        display: none;
+      }
+
+      /* Show only the selected category items */
+      .menu-items .menu-item.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+      <div class="menu-category">
+        <h2>Menu Categories</h2>
+        <ul>
+          <li><a href="#" data-category="all">All</a></li>
+          <li><a href="#" data-category="drinks">Drinks</a></li>
+          <li><a href="#" data-category="snacks">Snacks</a></li>
+          <li><a href="#" data-category="desserts">Desserts</a></li>
+        </ul>
+      </div>
+<div class="menu-items">
+<div class="menu-item drinks">
+<img src="1.png" alt="Drink 1">
+<h3>Drink 1</h3>
+<p>$3.99</p>
+<button>Add</button>
+</div>
+<div class="menu-item snacks">
+<img src="1.png" alt="Snack 1">
+<h3>Snack 1</h3>
+<p>$2.99</p>
+<button>Add</button>
+</div>
+<div class="menu-item desserts">
+<img src="1.png" alt="Dessert 1">
+<h3>Dessert 1</h3>
+<p>$4.99</p>
+<button>Add</button>
+</div>
+<div class="menu-item drinks">
+<img src="drink2.jpg" alt="Drink 2">
+<h3>Drink 2</h3>
+<p>$4.49</p>
+<button>Add</button>
+</div>
+<div class="menu-item snacks">
+<img src="snack2.jpg" alt="Snack 2">
+<h3>Snack 2</h3>
+<p>$3.49</p>
+<button>Add</button>
+</div>
+<div class="menu-item desserts">
+<img src="dessert2.jpg" alt="Dessert 2">
+<h3>Dessert 2</h3>
+<p>$5.99</p>
+<button>Add</button>
+</div>
+<div class="menu-item drinks">
+<img src="drink3.jpg" alt="Drink 3">
+<h3>Drink 3</h3>
+<p>$3.49</p>
+<button>Add</button>
+</div>
+<div class="menu-item snacks">
+<img src="snack3.jpg" alt="Snack 3">
+<h3>Snack 3</h3>
+<p>$4.49</p>
+<button>Add</button>
+</div>
+<div class="menu-item desserts">
+<img src="dessert3.jpg" alt="Dessert 3">
+<h3>Dessert 3</h3>
+<p>$3.99</p>
+<button>Add</button>
+</div>
+</div>
+</div>
+
+  <script>
+  const menuItems = document.querySelectorAll('.menu-item');
+  const categoryLinks = document.querySelectorAll('.menu-category a');
+
+  // Add click event listener to category links
+  categoryLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const category = e.target.getAttribute('data-category');
+
+      // Hide all items first
+      menuItems.forEach(item => {
+        item.classList.remove('show');
+      });
+
+      // Show only the selected category items
+      if (category === 'all') {
+        menuItems.forEach(item => {
+          item.classList.add('show');
+        });
+      } else {
+        const categoryItems = document.querySelectorAll(`.menu-item.${category}`);
+        categoryItems.forEach(item => {
+          item.classList.add('show');
+        });
+      }
+    });
+  });
+</script>
+
+  </body></html>
