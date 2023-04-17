@@ -1,229 +1,276 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Coffee Bar Menu</title>
-    <style>
-      * {
-        box-sizing: border-box;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Bar Menu</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #F2F2F2;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+    }
+
+    .category {
+      display: flex;
+      flex-direction: column;
+      background-color: #FFFFFF;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .category-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    .category-list {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .category-item {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .category-item:hover {
+      background-color: #F2F2F2;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+      justify-items: center;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      background-color: #FFFFFF;
+      border-radius: 5px;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: 10px;
+    }
+
+    .product-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      font-size: 16px;
+      color: #666666;
+      margin-bottom: 10px;
+    }
+
+    .product-add {
+      background-color: #FFD600;
+      border: none;
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .product-add:hover {
+      background-color: #FFE43F;
+    }
+
+    @media screen and (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .category {
+        flex-direction: row;
+        height: 50px;
       }
 
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
+      .category-list {
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
       }
 
-      .menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 20px;
-      }
-
-      .menu-category {
-        flex: 0 0 25%;
-        max-width: 25%;
-      }
-
-      .menu-category h2 {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 10px;
-      }
-
-      .menu-category ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .menu-category li {
-        margin-bottom: 5px;
-      }
-
-      .menu-category li a {
-        display: block;
-        background-color: #eee;
-        color: #333;
-        padding: 10px;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-
-      .menu-category li a:hover {
-        background-color: #ccc;
-      }
-
-      .menu-items {
-        flex: 0 0 75%;
-        max-width: 75%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-start;
-      }
-
-      .menu-item {
-        flex: 0 0 32%;
-        max-width: 32%;
-        margin-bottom: 20px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        padding: 10px;
-        position: relative;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-      }
-
-      .menu-item:hover {
-        transform: translateY(-5px);
-      }
-
-      .menu-item img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-        margin-bottom: 10px;
-      }
-
-      .menu-item h3 {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 5px;
-      }
-
-      .menu-item p {
+      .category-item {
+        padding: 10px 20px;
         font-size: 16px;
-        margin-bottom: 10px;
       }
 
-      .menu-item button {
-        display: block;
-        width: 100%;
-        background-color: #333;
-        color: #fff;
-        border: none;
-        padding: 10px;
+      .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .product-image {
+        height: 150px;
+      }
+
+      .product-title {
         font-size: 16px;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
       }
 
-      .menu-item button:hover {
-        background-color: #444;
+      .product-price {
+        font-size: 14px;
       }
 
-      /* Hide all items by default */
-      .menu-items .menu-item {
-        display: none;
+      .product-add {
+        font-size: 14px;
+        padding: 8px;
       }
+    }
+  </style></head>
 
-      /* Show only the selected category items */
-      .menu-items .menu-item.show {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="menu">
-      <div class="menu-category">
-        <h2>Menu Categories</h2>
-        <ul>
-          <li><a href="#" data-category="all">All</a></li>
-          <li><a href="#" data-category="drinks">Drinks</a></li>
-          <li><a href="#" data-category="snacks">Snacks</a></li>
-          <li><a href="#" data-category="desserts">Desserts</a></li>
-        </ul>
+<body>
+  <div class="container">
+    <div class="category">
+      <div class="category-title">Categories</div>
+      <div class="category-list">
+        <div class="category-item active" data-category="all">All</div>
+        <div class="category-item" data-category="drinks">Drinks</div>
+        <div class="category-item" data-category="snacks">Snacks</div>
+        <div class="category-item" data-category="desserts">Desserts</div>
       </div>
-<div class="menu-items">
-<div class="menu-item drinks">
-<img src="1.png" alt="Drink 1">
-<h3>Drink 1</h3>
-<p>$3.99</p>
-<button>Add</button>
-</div>
-<div class="menu-item snacks">
-<img src="1.png" alt="Snack 1">
-<h3>Snack 1</h3>
-<p>$2.99</p>
-<button>Add</button>
-</div>
-<div class="menu-item desserts">
-<img src="1.png" alt="Dessert 1">
-<h3>Dessert 1</h3>
-<p>$4.99</p>
-<button>Add</button>
-</div>
-<div class="menu-item drinks">
-<img src="drink2.jpg" alt="Drink 2">
-<h3>Drink 2</h3>
-<p>$4.49</p>
-<button>Add</button>
-</div>
-<div class="menu-item snacks">
-<img src="snack2.jpg" alt="Snack 2">
-<h3>Snack 2</h3>
-<p>$3.49</p>
-<button>Add</button>
-</div>
-<div class="menu-item desserts">
-<img src="dessert2.jpg" alt="Dessert 2">
-<h3>Dessert 2</h3>
-<p>$5.99</p>
-<button>Add</button>
-</div>
-<div class="menu-item drinks">
-<img src="drink3.jpg" alt="Drink 3">
-<h3>Drink 3</h3>
-<p>$3.49</p>
-<button>Add</button>
-</div>
-<div class="menu-item snacks">
-<img src="snack3.jpg" alt="Snack 3">
-<h3>Snack 3</h3>
-<p>$4.49</p>
-<button>Add</button>
-</div>
-<div class="menu-item desserts">
-<img src="dessert3.jpg" alt="Dessert 3">
-<h3>Dessert 3</h3>
-<p>$3.99</p>
-<button>Add</button>
-</div>
-</div>
-</div>
+    </div>
+    <div class="product-grid">
+      <div class="product-card" data-category="drinks">
+        <img src="1.png" alt="Drink 1" class="product-image">
+        <div class="product-details">
+          <div class="product-title">Drink 1</div>
+          <div class="product-price">$4.99</div>
+          <button class="product-add">Add</button>
+        </div>
+      </div>
+      <div class="product-card" data-category="snacks">
+        <img src="1.png" alt="Snack 1" class="product-image">
+        <div class="product-details">
+          <div class="product-title">Snack 1</div>
+          <div class="product-price">$2.99</div>
+          <button class="product-add">Add</button>
+        </div>
+      </div>
+      <div class="product-card" data-category="desserts">
+        <img src="1.png" alt="Dessert 1" class="product-image">
+        <div class="product-details">
+          <div class="product-title">Dessert 1</div>
+          <div class="product-price">$3.99</div>
+          <button class="product-add">Add</button>
+        </div>
+      </div>
+      <div class="product-card" data-category="drinks">
+        <img src="https://via.placeholder.com/300x200.png?text=Drink+2" alt="Drink 2" class="product-image">
+        <div class="product-details">
+          <div class="product-title">Drink 2</div>
+          <div class="product-price">$3.49</div>
+          <button class="product-add">Add</button>
+        </div>
+      </div>
+      <div class="product-card" data-category="snacks">
+        <img src="https://via.placeholder.com/300x200.png?text=Snack+2" alt="Snack 2" class="product-image">
+        <div class="product-details">
+          <div class="product-title">Snack 2</div>
+          <div class="product-price">$1.99</div>
+          <button class="product-add">Add</button>
+        </div>
 
-  <script>
-  const menuItems = document.querySelectorAll('.menu-item');
-  const categoryLinks = document.querySelectorAll('.menu-category a');
+          </div>
+  <div class="product-card" data-category="desserts">
+    <img src="https://via.placeholder.com/300x200.png?text=Dessert+2" alt="Dessert 2" class="product-image">
+    <div class="product-details">
+      <div class="product-title">Dessert 2</div>
+      <div class="product-price">$2.99</div>
+      <button class="product-add">Add</button>
+    </div>
+  </div>
+  <div class="product-card" data-category="drinks">
+    <img src="https://via.placeholder.com/300x200.png?text=Drink+3" alt="Drink 3" class="product-image">
+    <div class="product-details">
+      <div class="product-title">Drink 3</div>
+      <div class="product-price">$5.99</div>
+      <button class="product-add">Add</button>
+    </div>
+  </div>
+  <div class="product-card" data-category="snacks">
+    <img src="https://via.placeholder.com/300x200.png?text=Snack+3" alt="Snack 3" class="product-image">
+    <div class="product-details">
+      <div class="product-title">Snack 3</div>
+      <div class="product-price">$2.49</div>
+      <button class="product-add">Add</button>
+    </div>
+  </div>
+  <div class="product-card" data-category="desserts">
+    <img src="https://via.placeholder.com/300x200.png?text=Dessert+3" alt="Dessert 3" class="product-image">
+    <div class="product-details">
+      <div class="product-title">Dessert 3</div>
+      <div class="product-price">$4.99</div>
+      <button class="product-add">Add</button>
+    </div>
+  </div>
+</div>
+  </div>
+<script>
+    const categoryItems = document.querySelectorAll('.category-item');
+    const productCards = document.querySelectorAll('.product-card');
+    // Set default category to "All"
+let currentCategory = 'all';
 
-  // Add click event listener to category links
-  categoryLinks.forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const category = e.target.getAttribute('data-category');
-
-      // Hide all items first
-      menuItems.forEach(item => {
-        item.classList.remove('show');
-      });
-
-      // Show only the selected category items
-      if (category === 'all') {
-        menuItems.forEach(item => {
-          item.classList.add('show');
-        });
+// Add event listeners to category items
+categoryItems.forEach(item => {
+  item.addEventListener('click', () => {
+    // Remove "active" class from all category items
+    categoryItems.forEach(item => {
+      item.classList.remove('active');
+    });
+    // Add "active" class to clicked category item
+    item.classList.add('active');
+    // Filter product cards by category
+    currentCategory = item.getAttribute('data-category');
+    productCards.forEach(card => {
+      const cardCategory = card.getAttribute('data-category');
+      if (currentCategory === 'all' || currentCategory === cardCategory) {
+        card.style.display = 'block';
       } else {
-        const categoryItems = document.querySelectorAll(`.menu-item.${category}`);
-        categoryItems.forEach(item => {
-          item.classList.add('show');
-        });
+        card.style.display = 'none';
       }
     });
   });
-</script>
-
-  </body></html>
+});
+</script></body></html>
