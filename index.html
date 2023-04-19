@@ -29,7 +29,7 @@
         }
 
         .items {
-            padding: 20px;
+            padding: 15px;
         }
 
         .items .row {
@@ -41,8 +41,9 @@
         }
 
         .product-card {
-            background-color: #f8f9fa;
-            border: 1px solid #ced4da;
+            /*background-color: #f8f9fa;*/
+            border: none;
+            text-align: center;
             /*padding: 20px;*/
         }
 
@@ -61,11 +62,13 @@
         }
 
         .product-card .btn-add {
-            background-color: #007bff;
+            background-color: #757906;
             color: #fff;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
+            width: 100%;
+
         }
 
         .product-card .btn-add:hover {
@@ -74,6 +77,10 @@
 
         .main-cover {
             width: 400px;
+        }
+
+        .title {
+            font-weight: bold;
         }
     </style>
     <script src="https://kit.fontawesome.com/761a9d4dfe.js" crossorigin="anonymous"></script>
@@ -98,15 +105,15 @@
                         <div class="product-card">
                             <img src="1.png" alt="Product 1">
                             <span class="title">Product 1</span>
-                            <p>Price: $10</p>
-                                                        <button class="btn btn-add">Add</button>
+                            <p>$10</p>
+                            <button class="btn btn-add">Add</button>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="product-card">
                             <img src="1.png" alt="Product 2">
                             <span class="title">Product 2</span>
-                            <p>Price: $15</p>
+                            <p>$15</p>
                             <button class="btn btn-add">Add</button>
                         </div>
                     </div>
@@ -114,13 +121,42 @@
                         <div class="product-card">
                             <img src="1.png" alt="Product 3">
                             <span class="title">Product 3</span>
-                            <p>Price: $12</p>
+                            <p>$12</p>
+                            <button class="btn btn-add">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 items">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="product-card">
+                            <img src="1.png" alt="Product 1">
+                            <span class="title">Product 1</span>
+                            <p>$10</p>
+                            <button class="btn btn-add">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="product-card">
+                            <img src="1.png" alt="Product 2">
+                            <span class="title">Product 2</span>
+                            <p>$15</p>
+                            <button class="btn btn-add">Add</button>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="product-card">
+                            <img src="1.png" alt="Product 3">
+                            <span class="title">Product 3</span>
+                            <p>$12</p>
                             <button class="btn btn-add">Add</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
