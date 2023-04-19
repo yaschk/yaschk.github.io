@@ -7,6 +7,10 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
         .main-menu-row {
             background-color: #FFFFFF;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -42,10 +46,11 @@
         }
 
         .product-card {
-            /*background-color: #f8f9fa;*/
+            background-color: #f8f9fa;
             border: none;
             text-align: center;
-            /*padding: 20px;*/
+            padding: 20px;
+            transition: all 0.3s ease;
         }
 
         .product-card img {
@@ -63,14 +68,12 @@
         }
 
         .product-card .btn-add {
-            /*background-color: #757906;*/
-            background-color: #000000;
+            background-color: #757906;
             color: #fff;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
             width: 100%;
-
         }
 
         .product-card .btn-add:hover {
@@ -85,174 +88,70 @@
             font-weight: bold;
         }
 
-        .menu-btn-border{
-            border-right:0.1px solid;
+        .menu-btn-border {
+            border-right: 0.1px solid;
             border-color: #cccccc;
-            /*border: 1px;*/
         }
     </style>
     <script src="https://kit.fontawesome.com/761a9d4dfe.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="main-cover mb-4">
+<body class="main-cover mb-2">
     <div class="container-fluid">
-        <div class="row mx-2 mb-2 main-menu-row fixed-bottom">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-3 p-3 d-flex justify-content-center align-items-center menu-btn-border"><i class="fas fa-mug-hot"></i></div>
-                        <div class="col-3 p-3 d-flex justify-content-center align-items-center menu-btn-border"><i class="fa-solid fa-mug-saucer"></i></div>
-                        <div class="col-3 p-3 d-flex justify-content-center align-items-center menu-btn-border"><i class="fas fa-hotdog"></i></div>
-                        <div class="col-3 p-3 d-flex justify-content-center align-items-center"><i class="fa-solid fa-cookie"></i></i></div>
-                    </div>
-                </div>
-        </div>
-        <div class="row mx-2 p-2 main-menu-row">
-            <div class="col-12 items">
+        <div class="row mx-2 main-menu-row sticky-top">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 1">
-                            <span class="title">Product 1</span>
-                            <p>$10</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
+                    <div class="col-3 p-3 d-flex justify-content-center align-items-center menu-btn-border">
+                        <i class="fas fa-mug-hot"></i>
                     </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 2">
-                            <span class="title">Product 2</span>
-                            <p>$15</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
+                    <div class="col-3 p-3 d-flex justify-content-center align-items-center menu-btn-border">
+                        <i class="fa-solid fa-mug-saucer"></i>
                     </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 3">
-                            <span class="title">Product 3</span>
-                            <p>$12</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
+                    <div class="col-3 p-3 d-flex justify-content-center align-items-center menu-btn-border">
+                        <i class="fas fa-cookie-bite"></i>
                     </div>
-                </div>
-            </div>
-            <div class="col-12 items">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 1">
-                            <span class="title">Product 1</span>
-                            <p>$10</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 2">
-                            <span class="title">Product 2</span>
-                            <p>$15</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 3">
-                            <span class="title">Product 3</span>
-                            <p>$12</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 items">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 1">
-                            <span class="title">Product 1</span>
-                            <p>$10</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 2">
-                            <span class="title">Product 2</span>
-                            <p>$15</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 3">
-                            <span class="title">Product 3</span>
-                            <p>$12</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 items">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 1">
-                            <span class="title">Product 1</span>
-                            <p>$10</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 2">
-                            <span class="title">Product 2</span>
-                            <p>$15</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 3">
-                            <span class="title">Product 3</span>
-                            <p>$12</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 items">
-                <div class="row">
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 1">
-                            <span class="title">Product 1</span>
-                            <p>$10</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 2">
-                            <span class="title">Product 2</span>
-                            <p>$15</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="product-card">
-                            <img src="1.png" alt="Product 3">
-                            <span class="title">Product 3</span>
-                            <p>$12</p>
-                            <button class="btn btn-add">Add</button>
-                        </div>
+                    <div class="col-3 p-3 d-flex justify-content-center align-items-center">
+                        <i class="fas fa-hamburger"></i>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="container-fluid items">
+            <div class="row">
+                <div class="col-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Product 1">
+                        <h4 class="title">Product 1</h4>
+                        <p>Description of Product 1</p>
+                        <p>$10.99</p>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Product 2">
+                        <h4 class="title">Product 2</h4>
+                        <p>Description of Product 2</p>
+                        <p>$15.99</p>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="product-card">
+                        <img src="https://via.placeholder.com/150" alt="Product 3">
+                        <h4 class="title">Product 3</h4>
+                        <p>Description of Product 3</p>
+                        <p>$8.99</p>
+                        <button class="btn-add">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <!-- Bootstrap JS and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-DrF78fjh7uJp6j08z6U07rSqGMoM7KjSc3coybsAuhpMv8OdW1Em+XKpCifIZwlZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-07aK3EtV02g5M2Q5H7TE5y5KuVveFcyYUH+sqvyyK0ZQ2XKJf/KIcCJpA1Yy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
