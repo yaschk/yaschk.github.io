@@ -111,6 +111,24 @@
             margin: 5px 1px 5px 1px;
             font-size: 50%;
         }
+
+        .btn-change-item{
+            color: white;
+            background-color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            width: 25%;
+        }
+
+        .product-card .btn-change-item:hover {
+            background-color: #b0b29d;
+        }
+
+        .btn-change-item:focus,.btn-change-item:active {
+           outline: none !important;
+           box-shadow: none;
+        }
     </style>
     <script src="https://kit.fontawesome.com/761a9d4dfe.js" crossorigin="anonymous"></script>
 </head>
@@ -130,20 +148,15 @@
         <div class="row p-2 main-menu-row">
             <div class="col-12 items">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="product-card">
                             <img src="1.png" alt="Product 1">
                             <p class="title">Капучіно</p>
                             <p class="price">40/45/50₴</p>
-                            <button class="btn btn-add">+</button>
+                            <button class="btn btn-change-item">-</button>
+                            <button class="btn btn-change-item">+</button>
                         </div>
                     </div>
-                    <div class="col-1">
-                        <div class="row mt-0"><button class="btn btn-size">100ml</button></div>
-                        <div class="row mt-0"><button class="btn btn-size">150ml</button></div>
-                        <div class="row mt-0"><button class="btn btn-size">200ml</button></div>
-                    </div>
-
                     <div class="col-4">
                         <div class="product-card">
                             <img src="1.png" alt="Product 2">
