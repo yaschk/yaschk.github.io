@@ -132,7 +132,32 @@
 
         .modal-dialog{
             width: 100%;
-            height: 100%;
+        }
+
+        /* Additional styles */
+        .modal-body p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal-body .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .modal-body input[type="checkbox"],
+        .modal-body input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        .modal-body label {
+            font-weight: normal;
+        }
+
+        .modal-body input[type="number"] {
+            width: 70px;
+            margin-top: 5px;
         }
     </style>
     <script src="https://kit.fontawesome.com/761a9d4dfe.js" crossorigin="anonymous"></script>
@@ -294,25 +319,54 @@
         </div>
     </div>
 
-    <!-- Modal window -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="myModalLabel">Оберіть розмір:</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Choose one of the following options:</p>
-          <p><button class="btn btn-primary">100ml - 45</button></p>
-          <p><button class="btn btn-secondary">150ml</button></p>
-          <p><button class="btn btn-info">200ml</button></p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Оберіть опції</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Оберіть розмір:</p>
+                    <button class="btn btn-info">100ml - 45₴</button>
+                    <button class="btn btn-info">150ml - 50₴</button>
+                    <button class="btn btn-info">200ml - 55₴</button>
+
+                    <p>
+                        <input id="html" type="checkbox">
+                        <label for="html">На безлактозному молоці</label>
+                    </p>
+
+                    <p>Оберіть сироп:</p>
+                    <div>
+                        <p>
+                            <input type="radio" id="contactChoice2" name="syrop" value="phone">
+                            <label for="contactChoice2">Солона карамель +20₴</label>
+                        </p>
+                        <p>
+                            <input type="radio" id="contactChoice3" name="syrop" value="mail">
+                            <label for="contactChoice3">Банан +20₴</label>
+                        </p>
+                    </div>
+
+                    <p>
+                        <label for="quantity">Цукор:</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="5">
+                    </p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Додати до кошика</button>
+<button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+</div>
+</div>
+</div>
+</div>
+
+
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
