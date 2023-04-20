@@ -323,33 +323,45 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="myModalLabel">Оберіть опції</h5>
+                    <h5 class="modal-title" id="myModalLabel">Капучіно</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Оберіть розмір:</p>
-                    <button class="btn btn-info">100ml - 45₴</button>
-                    <button class="btn btn-info">150ml - 50₴</button>
-                    <button class="btn btn-info">200ml - 55₴</button>
 
+                    <p>Оберіть розмір:</p>
+                      <div>
+                        <p><input type="radio" id="contactChoice1"
+                         name="contact" value="email">
+                        <label for="contactChoice1">100ml - 45₴</label></p>
+
+                      <p>
+                          <input type="radio" id="contactChoice2"
+                         name="contact" value="phone">
+                        <label for="contactChoice2">150ml - 50₴</label>
+                      </p>
+
+
+                      <p>
+                          <input type="radio" id="contactChoice3"
+                         name="contact" value="mail">
+                        <label for="contactChoice3">200ml - 55₴</label>
+                      </p>
+
+                      </div>
                     <p>
                         <input id="html" type="checkbox">
                         <label for="html">На безлактозному молоці</label>
                     </p>
 
                     <p>Оберіть сироп:</p>
-                    <div>
-                        <p>
-                            <input type="radio" id="contactChoice2" name="syrop" value="phone">
-                            <label for="contactChoice2">Солона карамель +20₴</label>
-                        </p>
-                        <p>
-                            <input type="radio" id="contactChoice3" name="syrop" value="mail">
-                            <label for="contactChoice3">Банан +20₴</label>
-                        </p>
-                    </div>
+                    <select name="syrop" id="syrop" multiple>
+                      <option value="volvo">Солона карамель +20₴</option>
+                      <option value="saab">Банан +20₴</option>
+                      <option value="opel">Полуниця +20₴</option>
+                      <option value="audi">Ваніль +20₴</option>
+                    </select>
 
                     <p>
                         <label for="quantity">Цукор:</label>
